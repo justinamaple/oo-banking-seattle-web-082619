@@ -18,6 +18,7 @@ class BankAccount
     self.balance += amount
   end
 
+<<<<<<< HEAD
   def display_balance
     "Your balance is $#{balance}."
   end
@@ -25,6 +26,15 @@ class BankAccount
   def valid?
     balance.positive? && status == OPEN
   end
+=======
+    def display_balance
+        "Your balance is $#{self.balance}."
+    end 
+
+    def valid?
+        self.balance > 0 && self.status == OPEN
+    end 
+>>>>>>> a275d8d356a670b22d04a7c298bb38b8672c35ef
 
   def close_account
     self.status = CLOSED

@@ -18,10 +18,17 @@ class Transfer
 
   def valid?
     sender.valid? && receiver.valid?
+<<<<<<< HEAD
   end
 
   def execute_transaction
     if valid? && sender.balance > amount && status == PENDING
+=======
+  end 
+
+  def execute_transaction 
+    if valid? && sender.balance > amount  && self.status == PENDING
+>>>>>>> a275d8d356a670b22d04a7c298bb38b8672c35ef
       sender.balance -= amount
       receiver.balance += amount
       self.status = COMPLETE
@@ -32,10 +39,19 @@ class Transfer
   end
 
   def reverse_transfer
+<<<<<<< HEAD
     return unless status == COMPLETE
 
     sender.balance += amount
     receiver.balance -= amount
     self.status = REVERSED
   end
+=======
+    if self.status == COMPLETE
+      sender.balance += amount
+      receiver.balance -= amount
+      self.status = REVERSED
+    end   
+  end 
+>>>>>>> a275d8d356a670b22d04a7c298bb38b8672c35ef
 end
